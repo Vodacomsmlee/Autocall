@@ -1,0 +1,13 @@
+._top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+    padding: 20px;
+    background-color: powderblue;
+}
+
+._top img {
+    max-height: 100%;
+}
+

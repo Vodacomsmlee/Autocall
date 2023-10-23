@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="description" content="">
+    <title>AutoCall Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<div class="login-container">
+    <div class="login-box">
+        <h1>AUTO CALL</h1>
+        <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" id="userid" placeholder="아이디" autofocus>
+        </div>
+        <div class="input-field">
+            <i class="fas fa-key"></i>
+            <input type="password" id="userpwd" placeholder="비밀번호">
+        </div>
+        <button class="login-button" id="btn_login">로그인</button>
+    </div>
+</div>
+<link id="contextPathHolder" th:data-contextPath="${#httpServletRequest.getContextPath()}"/>
+<script th:src="@{/js/jquery3.6.0.min.js}"></script>
+<script type="text/javascript">
+    const CONTEXT_PATH = document.getElementById("contextPathHolder").getAttribute("data-contextPath") ? document.getElementById("contextPathHolder").getAttribute("data-contextPath") : '';
+
+    $(document).ready(function() {
+        $('#btn_login').click(function(){
+            let emp_no = $("#userid").val();
+            let pwd = $("#userpwd").val();
+
+            if(emp_no === "") {alert("userid empty!"); $("#userid").focus(); return false;}
+            if(pwd === "") {alert("userpwd empty!"); $("#userpwd").focus(); return false;}
+
+            $.ajax({
+                method: "POST",
+                url: CONTEXT_PATH+"/login/proc",
+                data: {
+                    emp_no: $("#userid").val()
+                    , pwd: $("#userpwd").val()
+                },
+                error: function(jqXHR) { }
+            }).done(function (data) {
+                if(data.rst) {
+                    location.replace(CONTEXT_PATH + "/main");
+                } else {
+                    alert("아이디 또는 비밀번호가 올바르지 않습니다.");
+                }
+            });
+        });
+    });
+
+</script>
+
+
+</body>
+
+</html>

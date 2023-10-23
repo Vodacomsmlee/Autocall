@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<head>
+    <meta charset="utf-8">
+    <title>AUTOCALL</title>
+    <meta name="description" content="Page Title">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+
+    <!-- base css -->
+    <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
+    <link id="appbundle" rel="stylesheet" media="screen, print" href="css/app.bundle.css">
+    <link id="mytheme" rel="stylesheet" media="screen, print" href="css/themes/cust-theme-15.css">
+    <link id="myskin" rel="stylesheet" media="screen, print" href="css/skins/skin-master.css">
+    <link rel="stylesheet" media="screen, print" href="css/datatables/datatables.bundle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<!-- BEGIN Body -->
+
+<body class="mod-bg-1 mod-nav-link nav-function-top desktop chrome webkit pace-done mod-skin-light blur">
+<div layout:fragment="content" class="_content">
+<!-- BEGIN Page Wrapper -->
+<div class="page-wrapper">
+    <div class="page-inner">
+        <!-- BEGIN Left Aside -->
+        <aside class="page-sidebar">
+
+            <!-- BEGIN PRIMARY NAVIGATION -->
+            <nav id="js-primary-nav" class="primary-nav" role="navigation">
+
+                <ul id="js-nav-menu" class="nav-menu">
+                    <li class="active">
+                        <a href="#" title="메뉴1" >
+                            <i class="fal fa-file"></i>
+                            <span class="nav-link-text" >메뉴</span>
+                        </a>
+                    </li>
+                    <button id="logout" class="btn btn-link ml-auto">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </ul>
+            </nav>
+            <!-- END PRIMARY NAVIGATION -->
+
+        </aside>
+        <!-- END Left Aside -->
+
+
+        <div class="page-content-wrapper">
+            <!-- BEGIN Page Header -->
+            <header class="page-header" role="banner">
+
+
+                <div class="page-logo">
+                    <a href="#" class="d-flex align-items-center position-relative">
+                        <img src="img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
+                        <span class="page-logo-text mr-1">AUTO CALL</span>
+
+
+                    </a>
+                </div>
+
+                <div class="hidden-lg-up">
+                    <a href="#" class="header-btn btn press-scale-down" data-action="toggle" data-class="mobile-nav-on">
+                        <i class="ni ni-menu"></i>
+                    </a>
+                </div>
+
+
+            </header>
+            <main id="js-page-content" role="main" class="page-content">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div id="panel-1" class="panel">
+                            <div class="panel-hdr">
+                                <h2>
+                                    등록기기 현황</span>
+                                </h2>
+                                <div class="panel-toolbar">
+                                    <button class="btn btn-xs btn-dark" id="btn-add" data-toggle="modal" data-target="#add" data-backdrop="static">등록</button>
+                                    <button class="btn btn-xs btn-dark ml-1" id="btn-edt">수정</button>
+                                    <button class="btn btn-xs btn-dark ml-1" id="btn-delete">삭제</button>
+                                </div>
+                            </div>
+                            <div class="panel-container show">
+                                <div class="panel-content">
+                                    <table id="dt-basic-example" class="table-sm table-bordered table-hover table-striped w-100" style="width:100%">
+                                        <thead class="thead-themed">
+                                        <tr>
+                                            <th>LTE 폰 번호</th>
+                                            <th>변경 발신 번호</th>
+                                            <th>등록된 시간</th>
+                                            <th>수정된 시간</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="device : ${data}" th:data-seq="${device.seq}">
+                                            <td th:text="${device.lte_phone}"></td>
+                                            <td th:text="${device.cid_number}"></td>
+                                            <td th:text="${device.reg_dt}"></td>
+                                            <td th:text="${device.last_edt_dt}"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div> <!-- END Page Content -->
+
+        </div>
+    </div>
+</div>
+<!-- END Page Wrapper -->
+
+
+<!-- Add MODAL -->
+<div class="modal fade" id="add" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    기기 등록
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                </button>
+            </div>
+
+            <form name="addfrm" id="addfrm" method="post">
+                <div class="modal-body">
+
+
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text width-76px">LTE 폰 번호</span>
+                            </div>
+                            <input type="text" id="lte_phone" placeholder="LTE 폰 번호" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text width-76px">변경 발신 번호</span>
+                            </div>
+                            <input type="text" id="cid_number" placeholder="변경 발신 번호" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-dark" id="saveBtn">저장</button>
+                    <button type="button" class="btn btn-xs btn-dark" data-dismiss="modal">닫기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Add MODAL End -->
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">기기 정보 수정</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text width-76px">LTE 폰 번호</span>
+                            </div>
+                            <input type="text" id="edit_lte_phone" placeholder="LTE 폰 번호" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text width-76px">변경 발신 번호</span>
+                            </div>
+                            <input type="text" id="edit_cid_number" placeholder="변경 발신 번호" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-dark" id="editSaveBtn">저장</button>
+                    <button type="button" class="btn btn-xs btn-dark" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Modal End -->
+
+</div>
+
+<th:block layout:fragment="script">
+<script src="js/vendors.bundle.js"></script>
+<script src="js/app.bundle.js"></script>
+<script src="js/datatables/datatables.bundle.js"></script>
+<script src="js/datatables/datatables.default.setting.js"></script>
+
+<script type="text/javascript">
+    let selectedRow = "";
+
+    $(document).ready(function() {
+        $("#logout").css("cursor", "pointer").click(function () {
+            location.replace(CONTEXT_PATH + "/logout");
+        });
+
+        const table = $('#dt-basic-example').DataTable({
+            ajax: {
+                url: "/list",
+                dataSrc: "data"
+            },
+            columns: [
+                // { "data": "seq" },
+                { "data": "lte_phone" },
+                { "data": "cid_number" },
+                { "data": "reg_dt" },
+                { "data": "last_edt_dt" }
+            ],
+            bLengthChange: false,
+            scrollCollapse: true,
+            ordering: false,
+            select: true,
+            paging: true,             // 페이징처리
+            pageLength: 13            // 페이지 별 열 갯수
+        });
+
+        table.on('select', function(e, dt, type, indexes){
+            selectedRow = table.row(indexes).data();
+            console.log("selectedRow", selectedRow);
+        }).on('deselect', function(){
+            selectedRow = "";
+        });
+
+        //저장 버튼
+        $('#saveBtn').click(function () {
+            let ltePhone = $('#lte_phone').val();
+            let cidNumber = $('#cid_number').val();
+
+            $.ajax({
+                url: '/add',
+                type: 'POST',
+                data: {
+                    lte_phone: ltePhone,
+                    cid_number: cidNumber
+                },
+                success: function () {
+                    $('#add').modal('hide');
+                    alert("기기가 추가되었습니다.")
+                    $('#dt-basic-example').DataTable().ajax.reload();
+                },
+                error: function () {
+                    console.error('기기 추가 중 에러가 발생했습니다.');
+                }
+            });
+        });
+
+
+        // 수정 버튼 클릭 시
+        $('#btn-edt').click(function () {
+            if (!selectedRow) {
+                alert("데이터를 선택 해 주세요.");
+                return;
+            }
+
+            let seq = selectedRow.seq;
+            let ltePhone = selectedRow.lte_phone;
+            let cidNumber = selectedRow.cid_number;
+
+            $('#editModal #edit_seq').val(seq);
+            $('#editModal #edit_lte_phone').val(ltePhone);
+            $('#editModal #edit_cid_number').val(cidNumber);
+
+            $('#editModal').modal('show');
+        });
+
+        // 수정 중 저장 버튼 클릭 시
+        $('#editSaveBtn').click(function () {
+            let ltePhone = $('#editModal #edit_lte_phone').val();
+            let cidNumber = $('#editModal #edit_cid_number').val();
+
+            $.ajax({
+                url: '/edit',
+                type: 'POST',
+                data: {
+                    seq: selectedRow.seq,
+                    lte_phone: ltePhone,
+                    cid_number: cidNumber
+                },
+                success: function () {
+                    $('#editModal').modal('hide');
+                    alert("수정이 완료되었습니다.");
+                    $('#dt-basic-example').DataTable().ajax.reload();
+                },
+                error: function () {
+                    console.error('수정 중 오류가 발생했습니다.');
+                }
+            });
+        });
+
+        // 삭제 버튼 클릭 시
+        $('#btn-delete').click(function () {
+            if (selectedRow === "") {
+                alert("데이터를 선택 해 주세요.");
+                return;
+            }
+
+            if (confirm("정말로 삭제하시겠습니까?")) {
+                    $.ajax({
+                        url: '/del',
+                        type: 'POST',
+                        data: {
+                            seq: selectedRow.seq
+                        },
+                        success: function () {
+                            alert("삭제가 완료되었습니다.")
+                            $('#dt-basic-example').DataTable().ajax.reload();
+                        },
+                        error: function () {
+                            console.error('데이터 삭제 도중 오류가 발생헀습니다.');
+                        }
+                    });
+            }
+        });
+    });
+</script>
+</th:block>
+</body>
+<!-- END Body -->
+</html>

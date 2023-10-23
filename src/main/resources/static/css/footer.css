@@ -1,0 +1,12 @@
+._footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    padding: 20px;
+    background-color: powderblue;
+}
+
+._footer img {
+    max-height: 100%;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="description" content="Sample SpringBoot">
+    <title>레이아웃</title>
+    <link rel="stylesheet" th:href="@{/css/top.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/content.css}">
+
+
+</head>
+
+<body>
+    <div>
+        <!-- CONTENTS BEGIN -->
+        <div th:replace="fragments/top :: topFragment"></div>
+        <!-- CONTENTS END -->
+
+        <!-- CONTENTS BEGIN -->
+        <div layout:fragment="content"> </div>
+        <!-- CONTENTS END -->
+
+        <!-- FOOTER BEGIN -->
+        <div th:replace="fragments/footer :: footerFragment"></div>
+        <!-- END - FOOTER -->
+    </div>
+
+    <!-- 공통 js -->
+    <script th:src="@{/js/jquery3.6.0.min.js}"></script>
+    <script th:src="@{/js/default.js}"></script>
+
+    <!-- Context Path -->
+    <link id="contextPathHolder" th:data-contextPath="${#httpServletRequest.getContextPath()}"/>
+
+    <script type="text/javascript">
+        const CONTEXT_PATH = document.getElementById("contextPathHolder").getAttribute("data-contextPath") ? document.getElementById("contextPathHolder").getAttribute("data-contextPath") : '';
+    </script>
+
+    <!-- 컨텐츠 스크립트 영역 -->
+    <th:block layout:fragment="script"></th:block>
+
+</body>
+
+</html>

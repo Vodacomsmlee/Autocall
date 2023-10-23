@@ -1,0 +1,26 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+._content {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.page-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+
+.page-content-wrapper {
+    flex: 1;
+    overflow: auto;
+}

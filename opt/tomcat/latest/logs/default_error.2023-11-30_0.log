@@ -1,0 +1,49 @@
+ERROR 2023-11-30 15:46:50.170 [restartedMain] [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+ERROR 2023-11-30 15:56:01.873 [restartedMain] [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean named 'accountService' that could not be found.
+
+
+Action:
+
+Consider defining a bean named 'accountService' in your configuration.
+
+ERROR 2023-11-30 16:00:18.441 [restartedMain] [LoggingFailureAnalysisReporter:40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean named 'accountService' that could not be found.
+
+
+Action:
+
+Consider defining a bean named 'accountService' in your configuration.
+

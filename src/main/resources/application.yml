@@ -1,15 +1,16 @@
 server:
   port: 8080
   servlet:
-    context-path: /
+    context-path: /autodial
 ---
 # database
 spring:
   datasource:
     hikari:
       driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-      jdbc-url: jdbc:log4jdbc:mariadb://192.168.102.49:3306/autocall?characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowMultiQueries=true
-      username: root
+#      jdbc-url: jdbc:log4jdbc:mariadb://192.168.102.49:3306/autocall?characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowMultiQueries=true
+      jdbc-url: jdbc:log4jdbc:mariadb://localhost:3306/autocall?characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowMultiQueries=true
+      username: vdc
       password: vdc7200#
       max-lifetime: 580000
 ---
@@ -36,8 +37,4 @@ logging:
     file: default
     err-file: default_error
 
----
-#Login
-login:
-  username: 1000
-  password: 1111
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Account">
+    <insert id="account_add" parameterType="hashmap">
+        insert into account (user_id, user_pwd)
+        SELECT #{user_id}, SHA2(#{user_pwd}, 256)
+        FROM DUAL
+        WHERE NOT EXISTS (SELECT 1 FROM account WHERE user_id = #{user_id})
+    </insert>
+
+    <select id="account_login" parameterType="hashmap" resultType="hashmap">
+        select seq, user_id, user_pwd
+        from account
+        where user_id = #{user_id}
+        and user_pwd =SHA2(#{user_pwd}, 256)
+        and del_yn = 0
+    </select>
+
+</mapper>

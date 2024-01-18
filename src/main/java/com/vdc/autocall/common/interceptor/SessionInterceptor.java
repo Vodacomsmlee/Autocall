@@ -19,39 +19,25 @@ public class SessionInterceptor implements HandlerInterceptor {
     //Controller 접근전
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
+        boolean rst = true;
         HttpSession session = request.getSession();
-
-        //Session 확인
         if (!hasSessionInfo(session)) {
-
-            //Ajax 호출의경우 SendError 코드 전송
-            if ("XMLHttpRequest".equals(request.getHeader("x-requested-with"))) {
-                response.sendError(901);
-            } else {
-                response.sendRedirect(request.getContextPath() + "/login");
-            }
-            return false;
+//            if ("XMLHttpRequest".equals(request.getHeader("x-requested-with"))) {
+//            response.sendError(401, "no session or session expire"); //세선 만료시 401 리턴
+//            }
+            response.sendRedirect(request.getContextPath() + "/login"); // 세션 만료시 /login으로 리다이렉트
+            rst = false;
         }
-
-        return true;
+        return rst;
     }
 
     //Controller 접근후
     @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView)  {
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
         if(modelAndView == null) return;
 
-        //페이지 호출의경우 세션정보를 Model에 넣는다.
-        if (!"XMLHttpRequest".equals(request.getHeader("x-requested-with"))) {
-            HttpSession session = request.getSession();
-
-            Map<String, String> map = new HashMap<>();
-            map.put("emp_no", session.getAttribute("emp_no").toString());
-            map.put("emp_nm", session.getAttribute("emp_nm").toString());
-            modelAndView.addObject("User", map);
-
-        }
     }
 
     @Override
@@ -60,7 +46,7 @@ public class SessionInterceptor implements HandlerInterceptor {
 
     private boolean hasSessionInfo(HttpSession session)
     {
-        return (session.getAttribute("emp_no") != null);
+        return (session.getAttribute("user_id") != null);
     }
 
 

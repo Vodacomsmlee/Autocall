@@ -1,5 +1,90 @@
-ERROR 2023-12-06 11:11:27.623 [restartedMain] [HikariPool:594] - HikariPool-1 - Exception during pool initialization.
-java.sql.SQLInvalidAuthorizationSpecException: (conn=312) Access denied for user 'vdc'@'localhost' (using password: YES)
+INFO  2023-11-29 15:24:33.801 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 16992 (C:\Users\82106\IdeaProjects\실무\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall)
+DEBUG 2023-11-29 15:24:33.803 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2023-11-29 15:24:33.804 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2023-11-29 15:24:33.964 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2023-11-29 15:24:33.964 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2023-11-29 15:24:34.414 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2023-11-29 15:24:34.684 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8080 (http)
+INFO  2023-11-29 15:24:34.690 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+INFO  2023-11-29 15:24:34.691 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2023-11-29 15:24:34.691 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2023-11-29 15:24:34.735 [restartedMain] [[/]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2023-11-29 15:24:34.735 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 771 ms
+INFO  2023-11-29 15:24:34.779 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+INFO  2023-11-29 15:24:34.853 [restartedMain] [HikariDataSource:82] - HikariPool-1 - Start completed.
+DEBUG 2023-11-29 15:24:34.859 [restartedMain] [DatabaseConfig$$EnhancerBySpringCGLIB$$e040e7c3:42] - SqlSessionFactory Start
+WARN  2023-11-29 15:24:35.110 [restartedMain] [AnnotationConfigServletWebServerApplicationContext:591] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'deviceController' method 
+com.vdc.autocall.controller.DeviceController#DeviceDel(CommandMap)
+to { [/del]}: There is already 'defaultController' bean method
+com.vdc.autocall.controller.DefaultController#DeviceDel(CommandMap) mapped.
+INFO  2023-11-29 15:24:35.110 [restartedMain] [HikariDataSource:350] - HikariPool-1 - Shutdown initiated...
+INFO  2023-11-29 15:24:35.112 [restartedMain] [HikariDataSource:352] - HikariPool-1 - Shutdown completed.
+INFO  2023-11-29 15:24:35.114 [restartedMain] [StandardService:173] - Stopping service [Tomcat]
+INFO  2023-11-29 15:24:35.121 [restartedMain] [ConditionEvaluationReportLoggingListener:136] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ERROR 2023-11-29 15:24:35.137 [restartedMain] [SpringApplication:821] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'deviceController' method 
+com.vdc.autocall.controller.DeviceController#DeviceDel(CommandMap)
+to { [/del]}: There is already 'defaultController' bean method
+com.vdc.autocall.controller.DefaultController#DeviceDel(CommandMap) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.vdc.autocall.AutocallApplication.main(AutocallApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'deviceController' method 
+com.vdc.autocall.controller.DeviceController#DeviceDel(CommandMap)
+to { [/del]}: There is already 'defaultController' bean method
+com.vdc.autocall.controller.DefaultController#DeviceDel(CommandMap) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 21 common frames omitted
+INFO  2023-11-29 15:28:59.600 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 5036 (C:\Users\82106\IdeaProjects\실무\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall)
+DEBUG 2023-11-29 15:28:59.601 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2023-11-29 15:28:59.602 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2023-11-29 15:28:59.753 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2023-11-29 15:28:59.754 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2023-11-29 15:29:00.133 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2023-11-29 15:29:00.383 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8080 (http)
+INFO  2023-11-29 15:29:00.387 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+INFO  2023-11-29 15:29:00.388 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2023-11-29 15:29:00.388 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2023-11-29 15:29:00.440 [restartedMain] [[/]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2023-11-29 15:29:00.441 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 687 ms
+INFO  2023-11-29 15:29:00.482 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+WARN  2023-11-29 15:29:00.520 [restartedMain] [ErrorPacket:100] - Error: 1045-28000: Access denied for user 'root'@'192.168.101.150' (using password: YES)
+ERROR 2023-11-29 15:29:01.524 [restartedMain] [HikariPool:594] - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: (conn=495462) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
 	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
 	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:284)
@@ -16,11 +101,11 @@ java.sql.SQLInvalidAuthorizationSpecException: (conn=312) Access denied for user
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
 	at com.vdc.autocall.configuration.DatabaseConfig.DataSourceMain(DatabaseConfig.java:36)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e50a6aa.CGLIB$DataSourceMain$1(<generated>)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e50a6aa$$FastClassBySpringCGLIB$$e260a7cc.invoke(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$53088856.CGLIB$DataSourceMain$3(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$53088856$$FastClassBySpringCGLIB$$836df770.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e50a6aa.DataSourceMain(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$53088856.DataSourceMain(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -109,8 +194,13 @@ java.sql.SQLInvalidAuthorizationSpecException: (conn=312) Access denied for user
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-ERROR 2023-12-06 11:11:27.649 [restartedMain] [SpringApplication:821] - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=312) Access denied for user 'vdc'@'localhost' (using password: YES)
+WARN  2023-11-29 15:29:01.529 [restartedMain] [AnnotationConfigServletWebServerApplicationContext:591] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495462) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+INFO  2023-11-29 15:29:01.530 [restartedMain] [StandardService:173] - Stopping service [Tomcat]
+INFO  2023-11-29 15:29:01.538 [restartedMain] [ConditionEvaluationReportLoggingListener:136] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ERROR 2023-11-29 15:29:01.584 [restartedMain] [SpringApplication:821] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495462) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
@@ -134,7 +224,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=312) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495462) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
@@ -151,7 +241,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
 	... 22 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=312) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'defaultDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495462) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
@@ -168,7 +258,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
 	... 36 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=312) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495462) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
@@ -189,7 +279,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
 	... 50 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=312) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495462) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
@@ -206,28 +296,28 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
 	... 68 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=312) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495462) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
 	... 82 common frames omitted
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=312) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495462) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
 	at com.vdc.autocall.configuration.DatabaseConfig.DataSourceMain(DatabaseConfig.java:36)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e50a6aa.CGLIB$DataSourceMain$1(<generated>)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e50a6aa$$FastClassBySpringCGLIB$$e260a7cc.invoke(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$53088856.CGLIB$DataSourceMain$3(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$53088856$$FastClassBySpringCGLIB$$836df770.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e50a6aa.DataSourceMain(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$53088856.DataSourceMain(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
 	... 83 common frames omitted
-Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=312) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=495462) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
 	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
 	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:284)
@@ -242,8 +332,22 @@ Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=312) Access deni
 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
 	... 96 common frames omitted
-ERROR 2023-12-06 13:17:40.447 [restartedMain] [HikariPool:594] - HikariPool-2 - Exception during pool initialization.
-java.sql.SQLInvalidAuthorizationSpecException: (conn=314) Access denied for user 'vdc'@'localhost' (using password: YES)
+INFO  2023-11-29 15:30:27.557 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 16100 (C:\Users\82106\IdeaProjects\실무\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall)
+DEBUG 2023-11-29 15:30:27.557 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2023-11-29 15:30:27.557 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2023-11-29 15:30:27.693 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2023-11-29 15:30:27.693 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2023-11-29 15:30:28.044 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2023-11-29 15:30:28.285 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8080 (http)
+INFO  2023-11-29 15:30:28.289 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+INFO  2023-11-29 15:30:28.290 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2023-11-29 15:30:28.290 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2023-11-29 15:30:28.336 [restartedMain] [[/]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2023-11-29 15:30:28.336 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 643 ms
+INFO  2023-11-29 15:30:28.377 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+WARN  2023-11-29 15:30:28.416 [restartedMain] [ErrorPacket:100] - Error: 1045-28000: Access denied for user 'root'@'192.168.101.150' (using password: YES)
+ERROR 2023-11-29 15:30:29.430 [restartedMain] [HikariPool:594] - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: (conn=495469) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
 	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
 	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:284)
@@ -260,11 +364,11 @@ java.sql.SQLInvalidAuthorizationSpecException: (conn=314) Access denied for user
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
 	at com.vdc.autocall.configuration.DatabaseConfig.DataSourceMain(DatabaseConfig.java:36)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f.CGLIB$DataSourceMain$3(<generated>)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f$$FastClassBySpringCGLIB$$b9a24ad8.invoke(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e23572f0.CGLIB$DataSourceMain$2(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e23572f0$$FastClassBySpringCGLIB$$cdb3e45d.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f.DataSourceMain(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e23572f0.DataSourceMain(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -353,8 +457,13 @@ java.sql.SQLInvalidAuthorizationSpecException: (conn=314) Access denied for user
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-ERROR 2023-12-06 13:17:40.468 [restartedMain] [SpringApplication:821] - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=314) Access denied for user 'vdc'@'localhost' (using password: YES)
+WARN  2023-11-29 15:30:29.434 [restartedMain] [AnnotationConfigServletWebServerApplicationContext:591] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deviceController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deviceService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deviceDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495469) Access denied for user 'root'@'192.168.101.150' (using password: YES)
+INFO  2023-11-29 15:30:29.436 [restartedMain] [StandardService:173] - Stopping service [Tomcat]
+INFO  2023-11-29 15:30:29.443 [restartedMain] [ConditionEvaluationReportLoggingListener:136] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+ERROR 2023-11-29 15:30:29.460 [restartedMain] [SpringApplication:821] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deviceController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deviceService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deviceDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495469) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
@@ -378,7 +487,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=314) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deviceService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deviceDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495469) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
@@ -395,7 +504,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
 	... 22 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'accountDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=314) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deviceDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495469) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
@@ -412,7 +521,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
 	... 36 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=314) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495469) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
@@ -433,7 +542,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
 	... 50 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=314) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'DataSourceMain' defined in class path resource [com/vdc/autocall/configuration/DatabaseConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495469) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
@@ -450,28 +559,28 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
 	... 68 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=314) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'DataSourceMain' threw exception; nested exception is com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495469) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
 	... 82 common frames omitted
-Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=314) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: (conn=495469) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
 	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
 	at com.vdc.autocall.configuration.DatabaseConfig.DataSourceMain(DatabaseConfig.java:36)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f.CGLIB$DataSourceMain$3(<generated>)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f$$FastClassBySpringCGLIB$$b9a24ad8.invoke(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e23572f0.CGLIB$DataSourceMain$2(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e23572f0$$FastClassBySpringCGLIB$$cdb3e45d.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
-	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$7037cf7f.DataSourceMain(<generated>)
+	at com.vdc.autocall.configuration.DatabaseConfig$$EnhancerBySpringCGLIB$$e23572f0.DataSourceMain(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
 	... 83 common frames omitted
-Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=314) Access denied for user 'vdc'@'localhost' (using password: YES)
+Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=495469) Access denied for user 'root'@'192.168.101.150' (using password: YES)
 	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:286)
 	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370)
 	at org.mariadb.jdbc.client.impl.ConnectionHelper.authenticationHandler(ConnectionHelper.java:284)
@@ -486,3 +595,132 @@ Caused by: java.sql.SQLInvalidAuthorizationSpecException: (conn=314) Access deni
 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
 	... 96 common frames omitted
+INFO  2023-11-29 15:31:17.738 [restartedMain] [AutocallApplication:55] - Starting AutocallApplication using Java 1.8.0_361 on DESKTOP-5BDQ2AQ with PID 12232 (C:\Users\82106\IdeaProjects\실무\autocall\build\classes\java\main started by 이상민 in C:\Users\82106\IdeaProjects\실무\autocall)
+DEBUG 2023-11-29 15:31:17.739 [restartedMain] [AutocallApplication:56] - Running with Spring Boot v2.7.14, Spring v5.3.29
+INFO  2023-11-29 15:31:17.740 [restartedMain] [AutocallApplication:631] - No active profile set, falling back to 1 default profile: "default"
+INFO  2023-11-29 15:31:17.915 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+INFO  2023-11-29 15:31:17.915 [restartedMain] [DevToolsPropertyDefaultsPostProcessor:255] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+WARN  2023-11-29 15:31:18.284 [restartedMain] [ClassPathMapperScanner:44] - No MyBatis mapper was found in '[com.vdc.autocall]' package. Please check your configuration.
+INFO  2023-11-29 15:31:18.530 [restartedMain] [TomcatWebServer:108] - Tomcat initialized with port(s): 8080 (http)
+INFO  2023-11-29 15:31:18.534 [restartedMain] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+INFO  2023-11-29 15:31:18.536 [restartedMain] [StandardService:173] - Starting service [Tomcat]
+INFO  2023-11-29 15:31:18.536 [restartedMain] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.78]
+INFO  2023-11-29 15:31:18.578 [restartedMain] [[/]:173] - Initializing Spring embedded WebApplicationContext
+INFO  2023-11-29 15:31:18.578 [restartedMain] [ServletWebServerApplicationContext:292] - Root WebApplicationContext: initialization completed in 662 ms
+INFO  2023-11-29 15:31:18.621 [restartedMain] [HikariDataSource:80] - HikariPool-1 - Starting...
+INFO  2023-11-29 15:31:18.699 [restartedMain] [HikariDataSource:82] - HikariPool-1 - Start completed.
+DEBUG 2023-11-29 15:31:18.703 [restartedMain] [DatabaseConfig$$EnhancerBySpringCGLIB$$36b14011:42] - SqlSessionFactory Start
+INFO  2023-11-29 15:31:19.010 [restartedMain] [OptionalLiveReloadServer:59] - LiveReload server is running on port 35729
+INFO  2023-11-29 15:31:19.020 [restartedMain] [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+INFO  2023-11-29 15:31:19.029 [restartedMain] [TomcatWebServer:220] - Tomcat started on port(s): 8080 (http) with context path ''
+INFO  2023-11-29 15:31:19.036 [restartedMain] [AutocallApplication:61] - Started AutocallApplication in 1.76 seconds (JVM running for 2.227)
+INFO  2023-11-29 15:33:26.975 [http-nio-8080-exec-1] [[/]:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+INFO  2023-11-29 15:33:26.976 [http-nio-8080-exec-1] [DispatcherServlet:525] - Initializing Servlet 'dispatcherServlet'
+INFO  2023-11-29 15:33:26.976 [http-nio-8080-exec-1] [DispatcherServlet:547] - Completed initialization in 0 ms
+DEBUG 2023-11-29 15:33:27.000 [http-nio-8080-exec-2] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:27.001 [http-nio-8080-exec-2] [LoggerInterceptor:21] - Request URI ===> /login
+DEBUG 2023-11-29 15:33:27.006 [http-nio-8080-exec-2] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:27.462 [http-nio-8080-exec-6] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:27.462 [http-nio-8080-exec-6] [LoggerInterceptor:21] - Request URI ===> /login
+DEBUG 2023-11-29 15:33:27.463 [http-nio-8080-exec-6] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:30.060 [http-nio-8080-exec-7] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:30.061 [http-nio-8080-exec-7] [LoggerInterceptor:21] - Request URI ===> /login/proc
+DEBUG 2023-11-29 15:33:30.089 [http-nio-8080-exec-7] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:30.095 [http-nio-8080-exec-8] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:30.095 [http-nio-8080-exec-8] [LoggerInterceptor:21] - Request URI ===> /main
+DEBUG 2023-11-29 15:33:30.095 [http-nio-8080-exec-8] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:30.404 [http-nio-8080-exec-3] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:30.404 [http-nio-8080-exec-3] [LoggerInterceptor:21] - Request URI ===> /img/logo.png
+DEBUG 2023-11-29 15:33:30.407 [http-nio-8080-exec-3] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:30.741 [http-nio-8080-exec-7] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:30.741 [http-nio-8080-exec-2] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:30.741 [http-nio-8080-exec-7] [LoggerInterceptor:21] - Request URI ===> /webfonts/fa-light-300.woff2
+DEBUG 2023-11-29 15:33:30.741 [http-nio-8080-exec-2] [LoggerInterceptor:21] - Request URI ===> /webfonts/nextgen-icons.woff2
+DEBUG 2023-11-29 15:33:30.743 [http-nio-8080-exec-2] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:30.744 [http-nio-8080-exec-7] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:30.787 [http-nio-8080-exec-4] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:30.787 [http-nio-8080-exec-4] [LoggerInterceptor:21] - Request URI ===> /list
+DEBUG 2023-11-29 15:33:30.835 [http-nio-8080-exec-4] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2023-11-29 15:33:30.850 [http-nio-8080-exec-4] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2023-11-29 15:33:30.866 [http-nio-8080-exec-4] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:31.240 [http-nio-8080-exec-3] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:31.240 [http-nio-8080-exec-3] [LoggerInterceptor:21] - Request URI ===> /favicon.ico
+DEBUG 2023-11-29 15:33:31.241 [http-nio-8080-exec-3] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:31.244 [http-nio-8080-exec-3] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:31.245 [http-nio-8080-exec-3] [LoggerInterceptor:21] - Request URI ===> /error
+DEBUG 2023-11-29 15:33:31.267 [http-nio-8080-exec-3] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:40.196 [http-nio-8080-exec-10] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:40.197 [http-nio-8080-exec-10] [LoggerInterceptor:21] - Request URI ===> /add
+DEBUG 2023-11-29 15:33:40.203 [http-nio-8080-exec-10] [ArgumentResolver:54] - ##### XSSParam key : lte_phone, value : 11
+DEBUG 2023-11-29 15:33:40.203 [http-nio-8080-exec-10] [ArgumentResolver:54] - ##### XSSParam key : cid_number, value : 11
+DEBUG 2023-11-29 15:33:40.203 [http-nio-8080-exec-10] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceAdd
+DEBUG 2023-11-29 15:33:40.205 [http-nio-8080-exec-10] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. INSERT INTO device (lte_phone, cid_number)
+        VALUES ('11', '11')
+
+DEBUG 2023-11-29 15:33:40.222 [http-nio-8080-exec-10] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:41.229 [http-nio-8080-exec-1] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:41.230 [http-nio-8080-exec-1] [LoggerInterceptor:21] - Request URI ===> /list
+DEBUG 2023-11-29 15:33:41.231 [http-nio-8080-exec-1] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2023-11-29 15:33:41.233 [http-nio-8080-exec-1] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2023-11-29 15:33:41.236 [http-nio-8080-exec-1] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:44.900 [http-nio-8080-exec-8] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:44.900 [http-nio-8080-exec-8] [LoggerInterceptor:21] - Request URI ===> /edit
+DEBUG 2023-11-29 15:33:44.901 [http-nio-8080-exec-8] [ArgumentResolver:54] - ##### XSSParam key : seq, value : 3
+DEBUG 2023-11-29 15:33:44.901 [http-nio-8080-exec-8] [ArgumentResolver:54] - ##### XSSParam key : lte_phone, value : 111
+DEBUG 2023-11-29 15:33:44.901 [http-nio-8080-exec-8] [ArgumentResolver:54] - ##### XSSParam key : cid_number, value : 111
+DEBUG 2023-11-29 15:33:44.901 [http-nio-8080-exec-8] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceEdit
+DEBUG 2023-11-29 15:33:44.904 [http-nio-8080-exec-8] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE device
+        SET lte_phone = '111',
+            cid_number = '111',
+            last_edt_dt = NOW()
+        WHERE seq = '3'
+
+DEBUG 2023-11-29 15:33:44.906 [http-nio-8080-exec-8] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:45.695 [http-nio-8080-exec-6] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:45.695 [http-nio-8080-exec-6] [LoggerInterceptor:21] - Request URI ===> /list
+DEBUG 2023-11-29 15:33:45.696 [http-nio-8080-exec-6] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2023-11-29 15:33:45.698 [http-nio-8080-exec-6] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2023-11-29 15:33:45.703 [http-nio-8080-exec-6] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:48.838 [http-nio-8080-exec-5] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:48.839 [http-nio-8080-exec-5] [LoggerInterceptor:21] - Request URI ===> /del
+DEBUG 2023-11-29 15:33:48.839 [http-nio-8080-exec-5] [ArgumentResolver:54] - ##### XSSParam key : seq, value : 3
+DEBUG 2023-11-29 15:33:48.840 [http-nio-8080-exec-5] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceDel
+DEBUG 2023-11-29 15:33:48.842 [http-nio-8080-exec-5] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. UPDATE device
+        SET del_stat = 1
+        WHERE seq = '3'
+
+DEBUG 2023-11-29 15:33:48.845 [http-nio-8080-exec-5] [LoggerInterceptor:31] - ==================== END ======================
+DEBUG 2023-11-29 15:33:49.687 [http-nio-8080-exec-9] [LoggerInterceptor:20] - ==================== BEGIN ====================
+DEBUG 2023-11-29 15:33:49.688 [http-nio-8080-exec-9] [LoggerInterceptor:21] - Request URI ===> /list
+DEBUG 2023-11-29 15:33:49.688 [http-nio-8080-exec-9] [AbstractDAO:15] - 	 QueryId  	:  Device.DeviceList
+DEBUG 2023-11-29 15:33:49.691 [http-nio-8080-exec-9] [sqlonly:223] -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT seq, lte_phone, cid_number,
+               DATE_FORMAT(reg_dt, '%Y/%m/%d %k:%i') AS reg_dt,
+               DATE_FORMAT(last_edt_dt, '%Y/%m/%d %k:%i') AS last_edt_dt
+        FROM device
+        WHERE del_stat = 0
+
+DEBUG 2023-11-29 15:33:49.693 [http-nio-8080-exec-9] [LoggerInterceptor:31] - ==================== END ======================
+INFO  2023-11-29 16:30:59.648 [SpringApplicationShutdownHook] [HikariDataSource:350] - HikariPool-1 - Shutdown initiated...
+INFO  2023-11-29 16:30:59.673 [SpringApplicationShutdownHook] [HikariDataSource:352] - HikariPool-1 - Shutdown completed.

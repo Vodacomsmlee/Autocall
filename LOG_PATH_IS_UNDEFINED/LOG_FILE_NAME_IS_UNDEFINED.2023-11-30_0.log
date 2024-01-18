@@ -1,0 +1,26 @@
+INFO  2023-11-30 15:38:07.709 [Thread-35] [Http11NioProtocol:173] - Pausing ProtocolHandler ["http-nio-8080"]
+INFO  2023-11-30 15:38:07.710 [Thread-35] [StandardService:173] - Stopping service [Tomcat]
+INFO  2023-11-30 15:38:07.713 [Thread-35] [Http11NioProtocol:173] - Stopping ProtocolHandler ["http-nio-8080"]
+INFO  2023-11-30 15:38:07.713 [Thread-35] [Http11NioProtocol:173] - Destroying ProtocolHandler ["http-nio-8080"]
+DEBUG 2023-11-30 15:38:07.713 [Thread-35] [DefaultLifecycleProcessor:239] - Bean 'webServerStartStop' completed its stop procedure
+DEBUG 2023-11-30 15:38:07.713 [Thread-35] [DefaultLifecycleProcessor:366] - Stopping beans in phase -2147483647
+DEBUG 2023-11-30 15:38:07.714 [Thread-35] [DefaultLifecycleProcessor:239] - Bean 'springBootLoggingLifecycle' completed its stop procedure
+DEBUG 2023-11-30 15:38:07.714 [Thread-35] [AnnotationMBeanExporter:452] - Unregistering JMX-exposed beans on shutdown
+DEBUG 2023-11-30 15:38:07.714 [Thread-35] [AnnotationMBeanExporter:186] - Unregistering JMX-exposed beans
+DEBUG 2023-11-30 15:38:07.714 [Thread-35] [ThreadPoolTaskExecutor:224] - Shutting down ExecutorService 'applicationTaskExecutor'
+INFO  2023-11-30 15:38:07.714 [Thread-35] [HikariDataSource:350] - HikariPool-7 - Shutdown initiated...
+DEBUG 2023-11-30 15:38:07.714 [Thread-35] [HikariPool:421] - HikariPool-7 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+DEBUG 2023-11-30 15:38:07.715 [HikariPool-7 connection closer] [PoolBase:134] - HikariPool-7 - Closing connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@35faed23: (connection evicted)
+DEBUG 2023-11-30 15:38:07.717 [HikariPool-7 connection closer] [PoolBase:134] - HikariPool-7 - Closing connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@3b3d15ec: (connection evicted)
+DEBUG 2023-11-30 15:38:07.718 [HikariPool-7 connection closer] [PoolBase:134] - HikariPool-7 - Closing connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@3f028653: (connection evicted)
+DEBUG 2023-11-30 15:38:07.719 [HikariPool-7 connection closer] [PoolBase:134] - HikariPool-7 - Closing connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@7a001fd7: (connection evicted)
+DEBUG 2023-11-30 15:38:07.721 [HikariPool-7 connection closer] [PoolBase:134] - HikariPool-7 - Closing connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@18716641: (connection evicted)
+DEBUG 2023-11-30 15:38:07.722 [HikariPool-7 connection closer] [PoolBase:134] - HikariPool-7 - Closing connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@4bb082d6: (connection evicted)
+DEBUG 2023-11-30 15:38:07.723 [HikariPool-7 connection closer] [PoolBase:134] - HikariPool-7 - Closing connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@602ba5ed: (connection evicted)
+DEBUG 2023-11-30 15:38:07.724 [HikariPool-7 connection closer] [PoolBase:134] - HikariPool-7 - Closing connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@1a2fe098: (connection evicted)
+DEBUG 2023-11-30 15:38:07.725 [HikariPool-7 connection closer] [PoolBase:134] - HikariPool-7 - Closing connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@9ffcef2: (connection evicted)
+DEBUG 2023-11-30 15:38:07.728 [HikariPool-7 connection closer] [PoolBase:134] - HikariPool-7 - Closing connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@46964b29: (connection evicted)
+DEBUG 2023-11-30 15:38:07.729 [Thread-35] [HikariPool:421] - HikariPool-7 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+INFO  2023-11-30 15:38:07.729 [Thread-35] [HikariDataSource:352] - HikariPool-7 - Shutdown completed.
+DEBUG 2023-11-30 15:38:07.791 [Thread-35] [RestartClassLoader:85] - Created RestartClassLoader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@490db116
+DEBUG 2023-11-30 15:38:07.791 [Thread-35] [Restarter:281] - Starting application com.vdc.autocall.AutocallApplication with URLs [file:/C:/Users/82106/IdeaProjects/%ec%8b%a4%eb%ac%b4/autocall/build/classes/java/main/, file:/C:/Users/82106/IdeaProjects/%ec%8b%a4%eb%ac%b4/autocall/build/resources/main/]

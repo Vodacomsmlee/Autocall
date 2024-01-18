@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>AUTOCALL</title>
+    <title>AUTODIAL</title>
     <meta name="description" content="Page Title">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
@@ -26,6 +26,7 @@
 <!-- BEGIN Page Wrapper -->
 <div class="page-wrapper">
     <div class="page-inner">
+
         <!-- BEGIN Left Aside -->
         <aside class="page-sidebar">
 
@@ -58,10 +59,14 @@
                 <div class="page-logo">
                     <a href="#" class="d-flex align-items-center position-relative">
                         <img src="img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
-                        <span class="page-logo-text mr-1">AUTO CALL</span>
+                        <span class="page-logo-text mr-1">AUTODIAL</span>
 
 
                     </a>
+
+                    <button id="signup" class="btn btn-link ml-auto">
+                        <i class="fas fa-user-plus"></i> 사용자 추가
+                    </button>
                 </div>
 
                 <div class="hidden-lg-up">
@@ -120,6 +125,49 @@
 </div>
 <!-- END Page Wrapper -->
 
+    <!-- 사용자 추가 -->
+    <div class="modal fade" id="addUserModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        사용자 추가
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                    </button>
+                </div>
+
+                <form name="addUserForm" id="addUserForm" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text width-76px">사용자 ID</span>
+                                </div>
+                                <input type="text" id="user_id" placeholder="사용자 ID" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text width-76px">비밀번호</span>
+                                </div>
+                                <input type="password" id="user_pwd" placeholder="비밀번호" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-xs btn-dark" id="addUserBtn">추가</button>
+                        <button type="button" class="btn btn-xs btn-dark" data-dismiss="modal">닫기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 사용자 추가 끝 -->
 
 <!-- Add MODAL -->
 <div class="modal fade" id="add" role="dialog" aria-hidden="true">
@@ -224,7 +272,7 @@
 
         const table = $('#dt-basic-example').DataTable({
             ajax: {
-                url: "/list",
+                url: CONTEXT_PATH + "/list",
                 dataSrc: "data"
             },
             columns: [
@@ -249,13 +297,41 @@
             selectedRow = "";
         });
 
-        //저장 버튼
+        // 사용자 추가
+        $('#signup').click(function () {
+            $('#addUserModal').modal('show');
+        });
+
+        // 추가 버튼
+        $('#addUserBtn').click(function () {
+            let userId = $('#user_id').val();
+            let userPwd = $('#user_pwd').val();
+
+            $.ajax({
+                url: CONTEXT_PATH + '/account/add',
+                type: 'POST',
+                data: {
+                    user_id: userId,
+                    user_pwd: userPwd
+                },
+                success: function () {
+                    $('#addUserModal').modal('hide');
+                    alert("사용자가 추가되었습니다.");
+                    // Handle any additional logic after successful user addition
+                },
+                error: function () {
+                    console.error('사용자 추가 중 에러가 발생했습니다.');
+                }
+            });
+        });
+
+        //등록 버튼
         $('#saveBtn').click(function () {
             let ltePhone = $('#lte_phone').val();
             let cidNumber = $('#cid_number').val();
 
             $.ajax({
-                url: '/add',
+                url: CONTEXT_PATH + '/add',
                 type: 'POST',
                 data: {
                     lte_phone: ltePhone,
@@ -297,7 +373,7 @@
             let cidNumber = $('#editModal #edit_cid_number').val();
 
             $.ajax({
-                url: '/edit',
+                url: CONTEXT_PATH + '/edit',
                 type: 'POST',
                 data: {
                     seq: selectedRow.seq,
@@ -324,7 +400,7 @@
 
             if (confirm("정말로 삭제하시겠습니까?")) {
                     $.ajax({
-                        url: '/del',
+                        url: CONTEXT_PATH + '/del',
                         type: 'POST',
                         data: {
                             seq: selectedRow.seq
